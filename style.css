@@ -1,0 +1,110 @@
+@font-face {
+  font-family: gummy;
+  src: url(/fonts/Gummy\ Bears.ttf);
+}
+
+@font-face {
+  font-family: storm;
+  src: url(/fonts/Storm\ Gust.ttf);
+}
+
+body {
+  background-color: darkgrey;
+}
+
+#header {
+  background: linear-gradient(to right, rgb(0 0 0 / 0.8), rgb(0 0 0 / 0)),
+    url(/img/jungle2.png);
+
+  border-radius: 1em;
+  padding: 3em;
+
+  font-family: gummy;
+}
+
+#header > h2,
+h5 {
+  text-align: center;
+  color: yellow;
+}
+
+#header > h2 {
+  font-weight: bolder;
+}
+
+#header > h5 {
+  font-weight: lighter;
+}
+
+#main {
+  margin-top: 3em;
+  display: flex;
+}
+
+#main > #left {
+  display: flex;
+}
+
+#left,
+#right,
+#searchBox,
+#guessBut {
+  flex: 1;
+}
+
+#right {
+  display: flex;
+  text-align: right;
+}
+
+#right > div {
+  flex: 1;
+}
+
+#bestScore {
+  color: brown;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#lastGuess {
+  visibility: hidden;
+}
+
+#searchBox {
+  margin-right: 1em;
+  max-height: 2.5em;
+}
+
+#input {
+  display: block;
+}
+
+.counter-box {
+  width: auto;
+  height: auto;
+  max-width: 7em;
+  max-height: 7em;
+  background: #fff;
+  padding: 1em 1.5em;
+  border-radius: 1em;
+  text-align: center;
+  margin-inline: 1em;
+}
+
+.counter-box > h2 {
+  display: inline-block;
+  /* margin: 0.5em 0; */
+  font-size: 1.5em;
+  color: #000;
+}
+
+.counter-box > h4 {
+  font-size: 0.8em;
+}
+
+.counter-box .fa {
+  font-size: 1.3em;
+  color: orange;
+  display: block;
+}
