@@ -6,6 +6,7 @@ let round = document.querySelector("#round");
 let last = document.querySelector("#lastNumber");
 let lastGuess = document.querySelector("#lastGuess");
 
+// It's the answer. you can delete it
 console.log(number);
 
 //set the first bydefault value
@@ -19,6 +20,8 @@ if (bestScore == null) {
   best.innerHTML = "Try for your best!";
 }
 
+// tip: bestScore is the bestscore had the player, bestScoreRound is the actual score
+// and best is the place to put the score
 best.innerHTML = bestScore;
 
 //button operator
@@ -26,6 +29,7 @@ but.addEventListener("click", () => {
   //counter for score
   bestScoreRound += 1;
 
+  // bydefault we don't have first data, then we see that after first entry of user
   lastGuess.style.visibility = "visible";
 
   //get the number from input
@@ -37,9 +41,21 @@ but.addEventListener("click", () => {
 
   //main conditions
   if (input < number) {
-    output.innerHTML = "It's too small";
+    if (number - input >= 1000) {
+      output.innerHTML = "It's too small";
+    } else if (number - input < 1000 && number - input > 10) {
+      output.innerHTML = "It's small";
+    } else if (number - input <= 10) {
+      output.innerHTML = "It's close but still small";
+    }
   } else if (input > number) {
-    output.innerHTML = "It's too big";
+    if (input - number >= 1000) {
+      output.innerHTML = "It's too big";
+    } else if (input - number < 1000 && input - number > 10) {
+      output.innerHTML = "It's big";
+    } else if (input - number <= 10) {
+      output.innerHTML = "It's close but still big";
+    }
   } else if (input == number) {
     //set the best score in storage
     if (bestScoreRound <= bestScore || bestScore == null || bestScore == 0) {
@@ -50,7 +66,9 @@ but.addEventListener("click", () => {
 
     //style editings
     output.style.color = "green";
+    // disable the input after final answer
     document.querySelector("#input").disabled = "true";
+    // run the end function to refresh the page automatically
     ending();
   } else {
     output.innerHTML = "Import invalid number";
@@ -58,15 +76,30 @@ but.addEventListener("click", () => {
   round.innerHTML = bestScoreRound;
 });
 
+// refresh teh page after correct answer
 function ending() {
   setTimeout(function () {
     window.location.reload();
   }, 3000);
 }
 
+// use enter as submit button
 inputFirst.addEventListener("keyup", (e) => {
   e.preventDefault();
   if (e.keyCode == 13) {
     but.click();
   }
+});
+
+// shaking
+but.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (inputFirst.value) {
+    inputFirst.classList.add("apply-shake");
+  }
+});
+
+// it needs to repeat the shaking after every guess
+inputFirst.addEventListener("animationend", (e) => {
+  inputFirst.classList.remove("apply-shake");
 });

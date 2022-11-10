@@ -12,6 +12,19 @@ body {
   background-color: (255, 255, 255);
 }
 
+a {
+  text-decoration: none;
+  color: darkblue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: darkblue;
+}
+
 #first {
   max-width: 445px;
   border: #000 solid;
@@ -46,41 +59,13 @@ body {
   font-weight: lighter;
 }
 
-#button {
-  transform: scale(1.2);
-}
-
 #main {
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
-#bottom {
-  text-align: center;
-  margin-top: 1em;
-  display: flex;
-  padding: 0 2em;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 #up {
   display: flex;
-}
-
-#middle {
-  text-align: center;
-  margin-top: 2em;
-}
-
-#bestScore {
-  color: brown;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-#lastGuess {
-  visibility: hidden;
 }
 
 #searchBox {
@@ -94,6 +79,43 @@ body {
 
 #input:focus {
   background-color: #ffffe0;
+}
+
+#button:hover {
+  transform: scale(1.2);
+}
+
+#middle {
+  text-align: center;
+  margin-top: 2em;
+}
+
+#lastGuess {
+  visibility: hidden;
+}
+
+#bottom {
+  text-align: center;
+  margin-top: 1em;
+  display: flex;
+  padding: 0 2em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#bestScore {
+  color: brown;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#github {
+  font-weight: lighter;
+  position: absolute;
+  bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border-top: #000 1px solid;
 }
 
 .counter-box {
@@ -125,24 +147,30 @@ body {
   display: block;
 }
 
-#github {
-  font-weight: lighter;
-  position: absolute;
-  bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
-  border-top: #000 1px solid;
+/* animation */
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
-a {
-  text-decoration: none;
-  color: darkblue;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:visited {
-  color: darkblue;
+.apply-shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
