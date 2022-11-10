@@ -1,4 +1,5 @@
 let but = document.querySelector("#button");
+let inputFirst = document.querySelector("#input");
 let number = Math.floor(Math.random() * 10000);
 let best = document.querySelector("#bestScore");
 let round = document.querySelector("#round");
@@ -28,11 +29,11 @@ but.addEventListener("click", () => {
   lastGuess.style.visibility = "visible";
 
   //get the number from input
-  let input = Number(document.querySelector("#input").value);
+  let input = Number(inputFirst.value);
   last.innerHTML = input;
 
   //last number box
-  let output = document.querySelector("#footer > h4");
+  let output = document.querySelector("#middle > h4");
 
   //main conditions
   if (input < number) {
@@ -62,3 +63,10 @@ function ending() {
     window.location.reload();
   }, 3000);
 }
+
+inputFirst.addEventListener("keyup", (e) => {
+  e.preventDefault();
+  if (e.keyCode == 13) {
+    but.click();
+  }
+});

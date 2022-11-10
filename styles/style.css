@@ -17,12 +17,13 @@ body {
   border: #000 solid;
   border-width: 0 1px 0 1px;
   padding: 2em 2em 0 2em;
-  min-height: 830px;
+  height: 100vh;
+  margin-bottom: 0;
 }
 
 #header {
   background: linear-gradient(to right, rgb(0 0 0 / 0.8), rgb(0 0 0 / 0)),
-    url(/img/jungle2.png);
+    url(/img/jungle.png);
 
   border-radius: 1em;
   padding: 3em;
@@ -45,23 +46,29 @@ body {
   font-weight: lighter;
 }
 
+#button {
+  transform: scale(1.2);
+}
+
 #main {
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
-#right {
+#bottom {
   text-align: center;
   margin-top: 1em;
   display: flex;
-  padding: 0 1em;
+  padding: 0 2em;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-#left {
+#up {
   display: flex;
 }
 
-#footer {
+#middle {
   text-align: center;
   margin-top: 2em;
 }
@@ -83,6 +90,10 @@ body {
 
 #input {
   display: block;
+}
+
+#input:focus {
+  background-color: #ffffe0;
 }
 
 .counter-box {
@@ -115,9 +126,12 @@ body {
 }
 
 #github {
-  margin-top: 10.5em;
-  text-align: center;
   font-weight: lighter;
+  position: absolute;
+  bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border-top: #000 1px solid;
 }
 
 a {
