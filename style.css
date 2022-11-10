@@ -9,7 +9,15 @@
 }
 
 body {
-  background-color: darkgrey;
+  background-color: (255, 255, 255);
+}
+
+#first {
+  max-width: 445px;
+  border: #000 solid;
+  border-width: 0 1px 0 1px;
+  padding: 2em 2em 0 2em;
+  min-height: 830px;
 }
 
 #header {
@@ -20,10 +28,11 @@ body {
   padding: 3em;
 
   font-family: gummy;
+  max-width: 400px;
 }
 
 #header > h2,
-h5 {
+#header > h5 {
   text-align: center;
   color: yellow;
 }
@@ -38,27 +47,23 @@ h5 {
 
 #main {
   margin-top: 3em;
-  display: flex;
-}
-
-#main > #left {
-  display: flex;
-}
-
-#left,
-#right,
-#searchBox,
-#guessBut {
-  flex: 1;
+  margin-bottom: 3em;
 }
 
 #right {
+  text-align: center;
+  margin-top: 1em;
   display: flex;
-  text-align: right;
+  padding: 0 1em;
 }
 
-#right > div {
-  flex: 1;
+#left {
+  display: flex;
+}
+
+#footer {
+  text-align: center;
+  margin-top: 2em;
 }
 
 #bestScore {
@@ -83,10 +88,11 @@ h5 {
 .counter-box {
   width: auto;
   height: auto;
-  max-width: 7em;
-  max-height: 7em;
-  background: #fff;
+  max-width: 8em;
+  max-height: 8em;
+  background: (255, 255, 255);
   padding: 1em 1.5em;
+  border: #000 solid;
   border-radius: 1em;
   text-align: center;
   margin-inline: 1em;
@@ -94,7 +100,6 @@ h5 {
 
 .counter-box > h2 {
   display: inline-block;
-  /* margin: 0.5em 0; */
   font-size: 1.5em;
   color: #000;
 }
@@ -107,4 +112,23 @@ h5 {
   font-size: 1.3em;
   color: orange;
   display: block;
+}
+
+#github {
+  margin-top: 10.5em;
+  text-align: center;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+  color: darkblue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: darkblue;
 }

@@ -1,21 +1,24 @@
 let but = document.querySelector("#button");
 let number = Math.floor(Math.random() * 10000);
 let best = document.querySelector("#bestScore");
+let round = document.querySelector("#round");
 let last = document.querySelector("#lastNumber");
 let lastGuess = document.querySelector("#lastGuess");
+
+console.log(number);
 
 //set the first bydefault value
 let bestScoreRound = 0;
 
 //get the best score from storage
 let bestScore = Number(localStorage.getItem("bestScore"));
-console.log(bestScore);
 
-best.innerHTML = bestScore;
 //for first time
 if (bestScore == null) {
   best.innerHTML = "Try for your best!";
 }
+
+best.innerHTML = bestScore;
 
 //button operator
 but.addEventListener("click", () => {
@@ -38,7 +41,7 @@ but.addEventListener("click", () => {
     output.innerHTML = "It's too big";
   } else if (input == number) {
     //set the best score in storage
-    if (bestScoreRound <= bestScore || bestScore == null) {
+    if (bestScoreRound <= bestScore || bestScore == null || bestScore == 0) {
       localStorage.setItem("bestScore", bestScoreRound);
     }
 
@@ -51,11 +54,11 @@ but.addEventListener("click", () => {
   } else {
     output.innerHTML = "Import invalid number";
   }
-
-  //test data for console
-  console.log(number);
+  round.innerHTML = bestScoreRound;
 });
 
 function ending() {
-  console.log("hey");
+  setTimeout(function () {
+    window.location.reload();
+  }, 3000);
 }
