@@ -1,11 +1,11 @@
 @font-face {
   font-family: gummy;
-  src: url(fonts/Gummy\ Bears.ttf);
+  src: url(Gummy.ttf);
 }
 
 @font-face {
   font-family: storm;
-  src: url(fonts/Storm\ Gust.ttf);
+  src: url(Storm.ttf);
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 #header {
   background: linear-gradient(to right, rgb(0 0 0 / 0.8), rgb(0 0 0 / 0)),
-    url(img/jungle.png);
+    url(jungle.png);
 
   border-radius: 1em;
   padding: 3em;
