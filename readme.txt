@@ -8,6 +8,6 @@ Mini project with JS.
 
 
 Play online and challenge yourself:
-https://amirsalimi.com/game/guess.html
+https://amirsalimi.com/game/guess/guess.html
 
 
