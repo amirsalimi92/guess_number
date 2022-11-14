@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: (255, 255, 255);
+  background-color: #d6dce2;
 }
 
 a {
@@ -27,22 +27,23 @@ a:visited {
 
 #first {
   max-width: 445px;
-  border: #000 solid;
-  border-width: 0 1px 0 1px;
-  padding: 2em 2em 0 2em;
   height: 100vh;
-  margin-bottom: 0;
+  border: 1px black solid;
+  border-bottom: 0;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: whitesmoke;
 }
 
 #header {
   background: linear-gradient(to right, rgb(0 0 0 / 0.8), rgb(0 0 0 / 0)),
     url(jungle.png);
 
-  border-radius: 1em;
   padding: 3em;
+  width: 100%;
 
   font-family: gummy;
-  max-width: 400px;
 }
 
 #header > h2,
@@ -109,12 +110,13 @@ a:visited {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+#space {
+  height: 17vh;
+}
+
 #github {
   font-weight: lighter;
-  position: absolute;
-  bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
+  text-align: center;
   border-top: #000 1px solid;
 }
 
